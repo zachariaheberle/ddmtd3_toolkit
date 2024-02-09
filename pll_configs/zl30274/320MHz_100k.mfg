@@ -1,0 +1,212 @@
+; ZL30274                   
+; GUI Version               : 2.5.0 
+; File Generation Date      : 2/8/2024, 3:59:59 PM 
+; DUT FW Version            : not connected (work-offline mode) 
+; ============================================================================= 
+; NOTE: 
+; This is an incremental configuration script. 
+; For proper device operation, all register write and wait commands in 
+; this file must be performed in the sequence listed. 
+; ============================================================================= 
+; Configuration script commands 
+; 1. Register Write Command: 
+;         X , <register_address> , <data_bytes> 
+;         Both <register_address> and <data_bytes> are in hexadecimal 
+;         format and must have the "0x" prefix. 
+;         The register_address contains the page number and page offset. 
+;         The page number is stored in register_address[14:7]. 
+;         The page offset is stored in register_address[6:0]. 
+; 2. Wait Command: 
+;         W , <time_microseconds> 
+;         The wait time is specified in microseconds. 
+; ============================================================================= 
+X , 0x000B , 0x00             ; central_freq_offset 
+X , 0x000C , 0x00             ; central_freq_offset 
+X , 0x000D , 0x00             ; central_freq_offset 
+X , 0x000E , 0x00             ; central_freq_offset 
+X , 0x0026 , 0x01             ; xo_config 
+X , 0x002A , 0x32             ; sys_apll_primary_div_int 
+X , 0x0030 , 0x05             ; sys_apll_secondary_div 
+X , 0x0033 , 0x01             ; master_clk_cfg_ready 
+W , 100000 
+
+X , 0x0502 , 0x00             ; ref_mb_mask 
+X , 0x0503 , 0x01             ; ref_mb_mask 
+X , 0x0504 , 0x02             ; ref_mb_sem 
+W , 20000 
+X , 0x0505 , 0x00             ; ref0p_freq_base 
+X , 0x0506 , 0x04             ; ref0p_freq_base 
+X , 0x0507 , 0x82             ; ref0p_freq_mult 
+X , 0x0508 , 0x35             ; ref0p_freq_mult 
+X , 0x0509 , 0x00             ; ref0p_ratio_m 
+X , 0x050A , 0x03             ; ref0p_ratio_m 
+X , 0x050B , 0x00             ; ref0p_ratio_n 
+X , 0x050C , 0x7D             ; ref0p_ratio_n 
+X , 0x050D , 0x05             ; ref0p_config 
+X , 0x0504 , 0x01             ; ref_mb_sem 
+W , 20000 
+
+X , 0x0502 , 0x00             ; ref_mb_mask 
+X , 0x0503 , 0x04             ; ref_mb_mask 
+X , 0x0504 , 0x02             ; ref_mb_sem 
+W , 20000 
+X , 0x0505 , 0x00             ; ref1p_freq_base 
+X , 0x0506 , 0x04             ; ref1p_freq_base 
+X , 0x0507 , 0x82             ; ref1p_freq_mult 
+X , 0x0508 , 0x35             ; ref1p_freq_mult 
+X , 0x0509 , 0x00             ; ref1p_ratio_m 
+X , 0x050A , 0x03             ; ref1p_ratio_m 
+X , 0x050B , 0x00             ; ref1p_ratio_n 
+X , 0x050C , 0x7D             ; ref1p_ratio_n 
+X , 0x050D , 0x05             ; ref1p_config 
+X , 0x0504 , 0x01             ; ref_mb_sem 
+W , 20000 
+
+X , 0x0502 , 0x00             ; ref_mb_mask 
+X , 0x0503 , 0x10             ; ref_mb_mask 
+X , 0x0504 , 0x02             ; ref_mb_sem 
+W , 20000 
+X , 0x0505 , 0x00             ; ref2p_freq_base 
+X , 0x0506 , 0x04             ; ref2p_freq_base 
+X , 0x0507 , 0x82             ; ref2p_freq_mult 
+X , 0x0508 , 0x35             ; ref2p_freq_mult 
+X , 0x0509 , 0x00             ; ref2p_ratio_m 
+X , 0x050A , 0x03             ; ref2p_ratio_m 
+X , 0x050B , 0x00             ; ref2p_ratio_n 
+X , 0x050C , 0x7D             ; ref2p_ratio_n 
+X , 0x050D , 0x25             ; ref2p_config 
+X , 0x0504 , 0x01             ; ref_mb_sem 
+W , 20000 
+
+X , 0x0502 , 0x00             ; ref_mb_mask 
+X , 0x0503 , 0x40             ; ref_mb_mask 
+X , 0x0504 , 0x02             ; ref_mb_sem 
+W , 20000 
+X , 0x0505 , 0x00             ; ref3p_freq_base 
+X , 0x0506 , 0x04             ; ref3p_freq_base 
+X , 0x0507 , 0x82             ; ref3p_freq_mult 
+X , 0x0508 , 0x35             ; ref3p_freq_mult 
+X , 0x0509 , 0x00             ; ref3p_ratio_m 
+X , 0x050A , 0x03             ; ref3p_ratio_m 
+X , 0x050B , 0x00             ; ref3p_ratio_n 
+X , 0x050C , 0x7D             ; ref3p_ratio_n 
+X , 0x050D , 0x25             ; ref3p_config 
+X , 0x0504 , 0x01             ; ref_mb_sem 
+W , 20000 
+
+X , 0x0602 , 0x00             ; dpll_mb_mask 
+X , 0x0603 , 0x01             ; dpll_mb_mask 
+X , 0x0604 , 0x02             ; dpll_mb_sem 
+W , 20000 
+X , 0x0627 , 0x00             ; dpll0_duration_good 
+X , 0x064F , 0x01             ; dpll0_lock_delay 
+X , 0x0652 , 0xFF             ; dpll0_ref_prio_0 
+X , 0x0653 , 0xFF             ; dpll0_ref_prio_1 
+X , 0x0654 , 0x10             ; dpll0_ref_prio_2 
+X , 0x0655 , 0xFF             ; dpll0_ref_prio_3 
+X , 0x0604 , 0x01             ; dpll_mb_sem 
+W , 20000 
+
+X , 0x0602 , 0x00             ; dpll_mb_mask 
+X , 0x0603 , 0x02             ; dpll_mb_mask 
+X , 0x0604 , 0x02             ; dpll_mb_sem 
+W , 20000 
+X , 0x0627 , 0x00             ; dpll1_duration_good 
+X , 0x064F , 0x01             ; dpll1_lock_delay 
+X , 0x0652 , 0xFF             ; dpll1_ref_prio_0 
+X , 0x0653 , 0xFF             ; dpll1_ref_prio_1 
+X , 0x0654 , 0xFF             ; dpll1_ref_prio_2 
+X , 0x0655 , 0x10             ; dpll1_ref_prio_3 
+X , 0x0604 , 0x01             ; dpll_mb_sem 
+W , 20000 
+
+X , 0x0682 , 0x00             ; synth_mb_mask 
+X , 0x0683 , 0x01             ; synth_mb_mask 
+X , 0x0684 , 0x02             ; synth_mb_sem 
+W , 20000 
+X , 0x0688 , 0x13             ; synth0_freq_mult 
+X , 0x0689 , 0x12             ; synth0_freq_mult 
+X , 0x068A , 0xC3             ; synth0_freq_mult 
+X , 0x068B , 0x80             ; synth0_freq_mult 
+X , 0x0684 , 0x01             ; synth_mb_sem 
+W , 20000 
+
+X , 0x0682 , 0x00             ; synth_mb_mask 
+X , 0x0683 , 0x02             ; synth_mb_mask 
+X , 0x0684 , 0x02             ; synth_mb_sem 
+W , 20000 
+X , 0x0688 , 0x13             ; synth1_freq_mult 
+X , 0x0689 , 0x12             ; synth1_freq_mult 
+X , 0x068A , 0xC3             ; synth1_freq_mult 
+X , 0x068B , 0x80             ; synth1_freq_mult 
+X , 0x0684 , 0x01             ; synth_mb_sem 
+W , 20000 
+
+X , 0x0702 , 0x00             ; output_mb_mask 
+X , 0x0703 , 0x02             ; output_mb_mask 
+X , 0x0704 , 0x02             ; output_mb_sem 
+W , 20000 
+X , 0x0705 , 0x08             ; output1_mode 
+X , 0x0704 , 0x01             ; output_mb_sem 
+W , 20000 
+
+X , 0x0702 , 0x00             ; output_mb_mask 
+X , 0x0703 , 0x20             ; output_mb_mask 
+X , 0x0704 , 0x02             ; output_mb_sem 
+W , 20000 
+X , 0x0705 , 0x10             ; output5_mode 
+X , 0x070C , 0x00             ; output5_div 
+X , 0x070D , 0x01             ; output5_div 
+X , 0x070E , 0x86             ; output5_div 
+X , 0x070F , 0xA0             ; output5_div 
+X , 0x0710 , 0x00             ; output5_width 
+X , 0x0711 , 0x07             ; output5_width 
+X , 0x0712 , 0xA1             ; output5_width 
+X , 0x0713 , 0x20             ; output5_width 
+X , 0x0704 , 0x01             ; output_mb_sem 
+W , 20000 
+
+X , 0x0702 , 0x00             ; output_mb_mask 
+X , 0x0703 , 0x40             ; output_mb_mask 
+X , 0x0704 , 0x02             ; output_mb_sem 
+W , 20000 
+X , 0x0705 , 0x10             ; output6_mode 
+X , 0x070C , 0x00             ; output6_div 
+X , 0x070D , 0x01             ; output6_div 
+X , 0x070E , 0x86             ; output6_div 
+X , 0x070F , 0xA0             ; output6_div 
+X , 0x0710 , 0x00             ; output6_width 
+X , 0x0711 , 0x07             ; output6_width 
+X , 0x0712 , 0xA1             ; output6_width 
+X , 0x0713 , 0x20             ; output6_width 
+X , 0x0704 , 0x01             ; output_mb_sem 
+W , 20000 
+
+
+X , 0x020F , 0x01             ; ref_phase_err_read_rqst 
+X , 0x021C , 0x03             ; ref_freq_meas_ctrl 
+X , 0x021D , 0xFF             ; ref_freq_meas_mask_3_0 
+X , 0x021F , 0x01             ; dpll_meas_ref_freq_ctrl 
+
+X , 0x0284 , 0x42             ; dpll_mode_refsel_0 
+X , 0x0285 , 0x6D             ; dpll_ctrl_0 
+X , 0x0288 , 0x62             ; dpll_mode_refsel_1 
+X , 0x0289 , 0x0D             ; dpll_ctrl_1 
+X , 0x02D0 , 0x01             ; dpll_meas_ctrl 
+
+X , 0x0480 , 0x01             ; synth_ctrl_0 
+X , 0x0481 , 0x11             ; synth_ctrl_1 
+X , 0x04A8 , 0x31             ; output_ctrl_0 
+X , 0x04A9 , 0x31             ; output_ctrl_1 
+X , 0x04AA , 0x31             ; output_ctrl_2 
+X , 0x04AB , 0x31             ; output_ctrl_3 
+X , 0x04AC , 0x31             ; output_ctrl_4 
+X , 0x04AE , 0x11             ; output_ctrl_6 
+X , 0x04AF , 0x31             ; output_ctrl_7 
+X , 0x04B0 , 0x31             ; output_ctrl_8 
+X , 0x04B1 , 0x31             ; output_ctrl_9 
+
+; ============================================================================= 
+; Register Configuration End
+; Register Write Count = 147
+; ============================================================================= 
