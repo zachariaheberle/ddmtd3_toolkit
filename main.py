@@ -40,7 +40,8 @@ if __name__ == "__main__":
     print("Flashing Si5394 PLL...")
     sys.stdout.write("\033[F")
 
-    shutil.copyfile(si5394_config, f"/media/{os.environ['USER']}/CIRCUITPY/Si5394_REG.h")
+    shutil.copyfile(si5394_config, f"/media/{os.environ['USER']}/CIRCUITPY/Si5394_REG.h") # ORDER MATTERS IN WHICH THESE DEVICES ARE PLUGGED IN
+    shutil.copyfile(zl30274_config, f"/media/{os.environ['USER']}/CIRCUITPY1/ZL30274_REG.mfg")
     subprocess.run(["mpremote", "connect", "/dev/ttyACM0", "run", "./tools/flash_pll.py"])
     # subprocess.run(["./tools/start_pll.sh", si5394_config])
 

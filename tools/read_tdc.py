@@ -5,7 +5,7 @@ import digitalio
 import time
 import sys
 
-REG_FILENAME="ZL30274_REG.h"
+REG_FILENAME="ZL30274_REG.mfg"
 
 XO_CONFIG = 0x0026
 XO_AMP_SEL = 0x0021
