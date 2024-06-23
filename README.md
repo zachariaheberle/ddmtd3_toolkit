@@ -1,6 +1,6 @@
 # DDMTD3 Toolkit
 
-This repo contains the tools used for testing the DDMTD3 setup, please check the schematics folder to see how everything is wired.
+This repo contains the tools used for testing the DDMTD3 setup.
 
 The setup current consists of three boards:
 - CW_PLL (One of the purple boards)
